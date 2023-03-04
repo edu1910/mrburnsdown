@@ -99,7 +99,7 @@ const New = () => {
 
   useEffect(() => {
     calcIdealData()
-  }, [])
+  }, [days, points])
 
   return (
     <>
