@@ -50,13 +50,13 @@ const New = () => {
     } else if (e.target.name === 'points') {
       let value = e.target.value
       if (value) {
-        value = Math.min(9999, Math.max(0, e.target.value))
+        value = Math.round(Math.min(9999, Math.max(0, e.target.value)))
       }
       setPoints(value)
     } else if (e.target.name === 'days') {
       let value = e.target.value
       if (value) {
-        value = Math.min(60, Math.max(0, e.target.value))
+        value = Math.round(Math.min(60, Math.max(0, e.target.value)))
       }
       setDays(value)
     }
@@ -71,12 +71,12 @@ const New = () => {
       return
     }
 
-    if (days !== Math.min(60, Math.max(2, days))) {
+    if (days != Math.round(Math.min(60, Math.max(2, days)))) {
       setError('Dias deve ser um inteiro entre 2 e 60.')
       return
     }
 
-    if (points !== Math.min(9999, Math.max(1, points))) {
+    if (points != Math.round(Math.min(9999, Math.max(1, points)))) {
       setError('Pontos deve ser um inteiro entre 1 e 9999.')
       return
     }
@@ -99,7 +99,7 @@ const New = () => {
 
   useEffect(() => {
     calcIdealData()
-  })
+  }, [])
 
   return (
     <>

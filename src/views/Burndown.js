@@ -87,12 +87,12 @@ const Burndown = () => {
       return
     }
 
-    if (day.current !== Math.min(object.days, Math.max(1, day.current))) {
+    if (day.current != Math.round(Math.min(object.days, Math.max(1, day.current)))) {
       setError(`Dia deve ser um inteiro entre 1 e ${object.days}.`)
       return
     }
 
-    if (dayPoints.current !== Math.min(9999, Math.max(0, dayPoints.current))) {
+    if (dayPoints.current != Math.round(Math.min(9999, Math.max(0, dayPoints.current)))) {
       setError('Pontos deve ser um inteiro entre 0 e 9999.')
       return
     }
